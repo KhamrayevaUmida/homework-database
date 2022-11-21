@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            display: flex;
+            list-style-type: none;
+            background-color: red;
+            text-align: center;
+        }
+        li{
+            width: 11%;
+        }
+        li a{
+            font-size: 40px;
+            text-decoration: none;
+            padding: 20px;
+            color: black;
+        }
+        .navbar{
+            margin: auto;
+            width: 90%;
+            display: flex;
+        }
+        .blog{
+            width: 33%;
+            margin: 10px;
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="/">Главная</a></li>
+        <li><a href="/fruit/">Fruit</a></li>
+        <li><a href="/animal/">Animals</a></li>
+        <li><a href="/car/">Cars</a></li>
+        <li><a href="/color/">Color</a></li>
+        <li><a href="/book/">Book</a></li>
+        <li><a href="/telephone/">Telephone</a></li>
+        <li><a href="/mebel/">Mebel</a></li>
+        <li><a href="/texnika/">Texnika</a></li>
+    </ul>
+    <div class="navbar">
+        {% for inform in information %}
+            <div class="blog">
+                <h3>{{ inform.name }}</h3>
+                <img src="{{ inform.image }}" alt="rasm">
+                <p>{{ inform.content }}</p>
+                <p>{{ inform.date }}</p>
+                </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
